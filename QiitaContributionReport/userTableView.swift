@@ -36,6 +36,13 @@ class userTableView: UITableViewController, articleRequestDelegate {
         tableView.tableHeaderView = headerView
         helper.delegate = self
         helper.userID = userToken
+        loadUserDetails()
+        helper.getArticles()
+        profileImageView.clipsToBounds = true
+        profileImageView.layer.cornerRadius = 10
+    }
+    
+    func loadUserDetails(){
         getUserDetails(userID: userToken, completionHandler: { (profileImagePath, userName, description, error) in
             if error == nil {
                 DispatchQueue.main.async {
@@ -55,7 +62,6 @@ class userTableView: UITableViewController, articleRequestDelegate {
                 (error ?? "Unknown error").showSimpleAlert(on: self.navigationController)
             }
         })
-        helper.getArticles()
     }
     
     func updateCounter(){

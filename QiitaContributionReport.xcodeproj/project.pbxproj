@@ -19,27 +19,8 @@
 		DAD3A768247C8E98002B96F4 /* QiitaContributionReport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAD3A766247C8E98002B96F4 /* QiitaContributionReport.xcdatamodeld */; };
 		DAD3A76A247C8E99002B96F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD3A769247C8E99002B96F4 /* Assets.xcassets */; };
 		DAD3A76D247C8E99002B96F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD3A76B247C8E99002B96F4 /* LaunchScreen.storyboard */; };
-		DAD3A778247C8E9A002B96F4 /* QiitaContributionReportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3A777247C8E9A002B96F4 /* QiitaContributionReportTests.swift */; };
-		DAD3A783247C8E9A002B96F4 /* QiitaContributionReportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3A782247C8E9A002B96F4 /* QiitaContributionReportUITests.swift */; };
 		DAD3A792247C939E002B96F4 /* SwiftExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = DAD3A791247C939E002B96F4 /* SwiftExtensions */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DAD3A774247C8E9A002B96F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAD3A752247C8E98002B96F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DAD3A759247C8E98002B96F4;
-			remoteInfo = QiitaContributionReport;
-		};
-		DAD3A77F247C8E9A002B96F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAD3A752247C8E98002B96F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DAD3A759247C8E98002B96F4;
-			remoteInfo = QiitaContributionReport;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DA27D8E1247C960400ABB234 /* userTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userTableView.swift; sourceTree = "<group>"; };
@@ -53,12 +34,6 @@
 		DAD3A769247C8E99002B96F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAD3A76C247C8E99002B96F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAD3A76E247C8E99002B96F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAD3A773247C8E9A002B96F4 /* QiitaContributionReportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaContributionReportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAD3A777247C8E9A002B96F4 /* QiitaContributionReportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaContributionReportTests.swift; sourceTree = "<group>"; };
-		DAD3A779247C8E9A002B96F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAD3A77E247C8E9A002B96F4 /* QiitaContributionReportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaContributionReportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAD3A782247C8E9A002B96F4 /* QiitaContributionReportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaContributionReportUITests.swift; sourceTree = "<group>"; };
-		DAD3A784247C8E9A002B96F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,20 +48,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAD3A770247C8E9A002B96F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAD3A77B247C8E9A002B96F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,8 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				DAD3A75C247C8E98002B96F4 /* QiitaContributionReport */,
-				DAD3A776247C8E9A002B96F4 /* QiitaContributionReportTests */,
-				DAD3A781247C8E9A002B96F4 /* QiitaContributionReportUITests */,
 				DAD3A75B247C8E98002B96F4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,8 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				DAD3A75A247C8E98002B96F4 /* QiitaContributionReport.app */,
-				DAD3A773247C8E9A002B96F4 /* QiitaContributionReportTests.xctest */,
-				DAD3A77E247C8E9A002B96F4 /* QiitaContributionReportUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,24 +82,6 @@
 				DAD3A766247C8E98002B96F4 /* QiitaContributionReport.xcdatamodeld */,
 			);
 			path = QiitaContributionReport;
-			sourceTree = "<group>";
-		};
-		DAD3A776247C8E9A002B96F4 /* QiitaContributionReportTests */ = {
-			isa = PBXGroup;
-			children = (
-				DAD3A777247C8E9A002B96F4 /* QiitaContributionReportTests.swift */,
-				DAD3A779247C8E9A002B96F4 /* Info.plist */,
-			);
-			path = QiitaContributionReportTests;
-			sourceTree = "<group>";
-		};
-		DAD3A781247C8E9A002B96F4 /* QiitaContributionReportUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DAD3A782247C8E9A002B96F4 /* QiitaContributionReportUITests.swift */,
-				DAD3A784247C8E9A002B96F4 /* Info.plist */,
-			);
-			path = QiitaContributionReportUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,42 +110,6 @@
 			productReference = DAD3A75A247C8E98002B96F4 /* QiitaContributionReport.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DAD3A772247C8E9A002B96F4 /* QiitaContributionReportTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DAD3A78A247C8E9A002B96F4 /* Build configuration list for PBXNativeTarget "QiitaContributionReportTests" */;
-			buildPhases = (
-				DAD3A76F247C8E9A002B96F4 /* Sources */,
-				DAD3A770247C8E9A002B96F4 /* Frameworks */,
-				DAD3A771247C8E9A002B96F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DAD3A775247C8E9A002B96F4 /* PBXTargetDependency */,
-			);
-			name = QiitaContributionReportTests;
-			productName = QiitaContributionReportTests;
-			productReference = DAD3A773247C8E9A002B96F4 /* QiitaContributionReportTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DAD3A77D247C8E9A002B96F4 /* QiitaContributionReportUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DAD3A78D247C8E9A002B96F4 /* Build configuration list for PBXNativeTarget "QiitaContributionReportUITests" */;
-			buildPhases = (
-				DAD3A77A247C8E9A002B96F4 /* Sources */,
-				DAD3A77B247C8E9A002B96F4 /* Frameworks */,
-				DAD3A77C247C8E9A002B96F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DAD3A780247C8E9A002B96F4 /* PBXTargetDependency */,
-			);
-			name = QiitaContributionReportUITests;
-			productName = QiitaContributionReportUITests;
-			productReference = DAD3A77E247C8E9A002B96F4 /* QiitaContributionReportUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,14 +122,6 @@
 				TargetAttributes = {
 					DAD3A759247C8E98002B96F4 = {
 						CreatedOnToolsVersion = 11.4.1;
-					};
-					DAD3A772247C8E9A002B96F4 = {
-						CreatedOnToolsVersion = 11.4.1;
-						TestTargetID = DAD3A759247C8E98002B96F4;
-					};
-					DAD3A77D247C8E9A002B96F4 = {
-						CreatedOnToolsVersion = 11.4.1;
-						TestTargetID = DAD3A759247C8E98002B96F4;
 					};
 				};
 			};
@@ -250,8 +145,6 @@
 			projectRoot = "";
 			targets = (
 				DAD3A759247C8E98002B96F4 /* QiitaContributionReport */,
-				DAD3A772247C8E9A002B96F4 /* QiitaContributionReportTests */,
-				DAD3A77D247C8E9A002B96F4 /* QiitaContributionReportUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,20 +157,6 @@
 				DAD3A76D247C8E99002B96F4 /* LaunchScreen.storyboard in Resources */,
 				DAD3A76A247C8E99002B96F4 /* Assets.xcassets in Resources */,
 				DAD3A765247C8E98002B96F4 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAD3A771247C8E9A002B96F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAD3A77C247C8E9A002B96F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,36 +176,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAD3A76F247C8E9A002B96F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAD3A778247C8E9A002B96F4 /* QiitaContributionReportTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAD3A77A247C8E9A002B96F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAD3A783247C8E9A002B96F4 /* QiitaContributionReportUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DAD3A775247C8E9A002B96F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DAD3A759247C8E98002B96F4 /* QiitaContributionReport */;
-			targetProxy = DAD3A774247C8E9A002B96F4 /* PBXContainerItemProxy */;
-		};
-		DAD3A780247C8E9A002B96F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DAD3A759247C8E98002B96F4 /* QiitaContributionReport */;
-			targetProxy = DAD3A77F247C8E9A002B96F4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DAD3A763247C8E98002B96F4 /* Main.storyboard */ = {
@@ -500,90 +350,6 @@
 			};
 			name = Release;
 		};
-		DAD3A78B247C8E9A002B96F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9LFMJA3SC2;
-				INFOPLIST_FILE = QiitaContributionReportTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShunzheMa.QiitaContributionReportTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QiitaContributionReport.app/QiitaContributionReport";
-			};
-			name = Debug;
-		};
-		DAD3A78C247C8E9A002B96F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9LFMJA3SC2;
-				INFOPLIST_FILE = QiitaContributionReportTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShunzheMa.QiitaContributionReportTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QiitaContributionReport.app/QiitaContributionReport";
-			};
-			name = Release;
-		};
-		DAD3A78E247C8E9A002B96F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9LFMJA3SC2;
-				INFOPLIST_FILE = QiitaContributionReportUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShunzheMa.QiitaContributionReportUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = QiitaContributionReport;
-			};
-			name = Debug;
-		};
-		DAD3A78F247C8E9A002B96F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9LFMJA3SC2;
-				INFOPLIST_FILE = QiitaContributionReportUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShunzheMa.QiitaContributionReportUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = QiitaContributionReport;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -601,24 +367,6 @@
 			buildConfigurations = (
 				DAD3A788247C8E9A002B96F4 /* Debug */,
 				DAD3A789247C8E9A002B96F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DAD3A78A247C8E9A002B96F4 /* Build configuration list for PBXNativeTarget "QiitaContributionReportTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DAD3A78B247C8E9A002B96F4 /* Debug */,
-				DAD3A78C247C8E9A002B96F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DAD3A78D247C8E9A002B96F4 /* Build configuration list for PBXNativeTarget "QiitaContributionReportUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DAD3A78E247C8E9A002B96F4 /* Debug */,
-				DAD3A78F247C8E9A002B96F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,6 +14,7 @@ struct Article {
     var articlePublicationDate: String
     var likeCount: Int
     var readCount: Int
+    var articleURL: String
 }
 
 protocol articleRequestDelegate: AnyObject {
@@ -27,6 +28,9 @@ class requestHelper {
     
     weak var delegate: articleRequestDelegate?
     
+    /*
+     すべての記事IDを取得し、各記事IDに対して `fetchIndividualArticle` を呼び出します
+     */
     func getArticles() {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
@@ -66,6 +70,10 @@ class requestHelper {
         session.finishTasksAndInvalidate()
     }
     
+    /*
+     `id` が与えられた単一の記事に関する情報を取得します。
+     結果がサーバーから取り出されると、デリゲート関数 onReceivingNewArticleInformation を呼び出します
+     */
     func fetchIndividualArticle(id: String) {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
@@ -91,9 +99,10 @@ class requestHelper {
                     if let articleTitle = parsedData["title"]?.stringValue,
                         let articlePublicationDate = parsedData["created_at"]?.stringValue,
                         let likeCount = parsedData["likes_count"]?.int,
-                        let readCount = parsedData["page_views_count"]?.int {
+                        let readCount = parsedData["page_views_count"]?.int,
+                        let url = parsedData["url"]?.stringValue {
                         //Generate a story object
-                        let story = Article(articleTitle: articleTitle, articlePublicationDate: articlePublicationDate, likeCount: likeCount, readCount: readCount)
+                        let story = Article(articleTitle: articleTitle, articlePublicationDate: articlePublicationDate, likeCount: likeCount, readCount: readCount, articleURL: url)
                         self.delegate?.onReceivingNewArticleInformation(item: story)
                     }
                 }
@@ -110,8 +119,12 @@ class requestHelper {
 }
 
 /*
- Get the basic user information
+ 基本的なユーザー情報を取得します
  - completionHandler(profileImageURLPath, UserName, Description, error)
+ -- profileImageURLPath : プロフィール画像のURLパス
+ -- UserName : ユーザー名
+ -- Description : 説明
+ -- error : エラー
  */
 func getUserDetails(userID: String, completionHandler: @escaping (String?, String?, String?, String?) -> Void) {
     let sessionConfig = URLSessionConfiguration.default
@@ -133,19 +146,19 @@ func getUserDetails(userID: String, completionHandler: @escaping (String?, Strin
         if (error == nil) {
             if let fetchedData = data {
                 if let parsedData = try? JSON(data: fetchedData).dictionary {
-                    //Get the name
+                    //ユーザー名
                     let name = parsedData["name"]?.stringValue
-                    //Get the description
+                    //説明 description
                     let description = parsedData["description"]?.stringValue
-                    //Get the profile image
+                    //プロフィール画像のURLパス
                     let profileImage = parsedData["profile_image_url"]?.stringValue
-                    //Provide the result
+                    //
                     completionHandler(profileImage, name, description, nil)
                 }
             }
         }
         else {
-            // Failure
+            // エラー
             print("URL Session Task Failed: %@", error!.localizedDescription);
             completionHandler(nil, nil, nil, error?.localizedDescription)
         }

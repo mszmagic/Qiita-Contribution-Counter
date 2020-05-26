@@ -21,13 +21,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // UIのセットアップ
         continueButtonView.setUpOutlinedRoundButton()
-        //Restore previous token value, if there is any stored
+        // キーチェーンに前回の「トークン」値が保存されている場合にはそれを再度取得します。
         tokenTextField.text = keychain.get("qiitaToken") ?? ""
     }
     
     @IBAction func actionGoToQiitaAPIpage(){
+        /*
+         ユーザーの既存のブラウザーセッションのクッキーをここで利用できるよう、ASWebAuthenticationSession を用います。そうすればユーザーは再度ログインしなくてもよくなります。
+         */
         guard let authURL = URL(string: "https://qiita.com/settings/tokens/new") else { return }
         let session = ASWebAuthenticationSession(url: authURL, callbackURLScheme: "")
         { callbackURL, error in
@@ -38,18 +41,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func actionContinue(){
+        //ユーザーから提供されるトークンがあることを確認します
+        guard let enteredToken = tokenTextField.text else { return }
+        //Main Storyboard から userTableView を取得します
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "userTableView") as! userTableView
-        vc.userToken = tokenTextField.text ?? ""
-        //Save the token to user's Keychain
+        vc.userToken = enteredToken
+        //トークンをユーザーのキーチェーンに保存します
         keychain.set(tokenTextField.text ?? "", forKey: "qiitaToken")
-        //
+        //UINavigationController を用いて表示します
         navigationController?.show(vc, sender: nil)
     }
 
 
 }
 
+/*
+ ASWebAuthenticationSession がどこにビューを表示すべきか判断するためです
+ */
 extension ViewController: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
         return view.window!

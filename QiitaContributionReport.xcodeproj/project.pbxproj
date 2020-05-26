@@ -12,6 +12,9 @@
 		DAA9D0E8247CA43F00C1BB09 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DAA9D0E7247CA43F00C1BB09 /* SwiftyJSON */; };
 		DAA9D0EB247CA9A700C1BB09 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DAA9D0EA247CA9A700C1BB09 /* Kingfisher */; };
 		DAA9D0EE247CC4CE00C1BB09 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAA9D0ED247CC4CE00C1BB09 /* KeychainSwift */; };
+		DAA9D0F5247D89CE00C1BB09 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DAA9D0F0247D89CE00C1BB09 /* LICENSE */; };
+		DAA9D0F6247D89CE00C1BB09 /* LSHContributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9D0F1247D89CE00C1BB09 /* LSHContributionView.swift */; };
+		DAA9D0F7247D89CE00C1BB09 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DAA9D0F3247D89CE00C1BB09 /* README.md */; };
 		DAD3A75E247C8E98002B96F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3A75D247C8E98002B96F4 /* AppDelegate.swift */; };
 		DAD3A760247C8E98002B96F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3A75F247C8E98002B96F4 /* SceneDelegate.swift */; };
 		DAD3A762247C8E98002B96F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3A761247C8E98002B96F4 /* ViewController.swift */; };
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		DA27D8E1247C960400ABB234 /* userTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userTableView.swift; sourceTree = "<group>"; };
 		DA27D8E3247C990000ABB234 /* requestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requestHelper.swift; sourceTree = "<group>"; };
+		DAA9D0F0247D89CE00C1BB09 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DAA9D0F1247D89CE00C1BB09 /* LSHContributionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSHContributionView.swift; sourceTree = "<group>"; };
+		DAA9D0F3247D89CE00C1BB09 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAD3A75A247C8E98002B96F4 /* QiitaContributionReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaContributionReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD3A75D247C8E98002B96F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAD3A75F247C8E98002B96F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAA9D0EF247D89CE00C1BB09 /* LSHContributionView */ = {
+			isa = PBXGroup;
+			children = (
+				DAA9D0F0247D89CE00C1BB09 /* LICENSE */,
+				DAA9D0F1247D89CE00C1BB09 /* LSHContributionView.swift */,
+				DAA9D0F3247D89CE00C1BB09 /* README.md */,
+			);
+			path = LSHContributionView;
+			sourceTree = "<group>";
+		};
 		DAD3A751247C8E98002B96F4 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +96,7 @@
 				DAD3A76B247C8E99002B96F4 /* LaunchScreen.storyboard */,
 				DAD3A76E247C8E99002B96F4 /* Info.plist */,
 				DAD3A766247C8E98002B96F4 /* QiitaContributionReport.xcdatamodeld */,
+				DAA9D0EF247D89CE00C1BB09 /* LSHContributionView */,
 			);
 			path = QiitaContributionReport;
 			sourceTree = "<group>";
@@ -156,6 +173,8 @@
 			files = (
 				DAD3A76D247C8E99002B96F4 /* LaunchScreen.storyboard in Resources */,
 				DAD3A76A247C8E99002B96F4 /* Assets.xcassets in Resources */,
+				DAA9D0F7247D89CE00C1BB09 /* README.md in Resources */,
+				DAA9D0F5247D89CE00C1BB09 /* LICENSE in Resources */,
 				DAD3A765247C8E98002B96F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +192,7 @@
 				DAD3A75E247C8E98002B96F4 /* AppDelegate.swift in Sources */,
 				DAD3A760247C8E98002B96F4 /* SceneDelegate.swift in Sources */,
 				DA27D8E4247C990000ABB234 /* requestHelper.swift in Sources */,
+				DAA9D0F6247D89CE00C1BB09 /* LSHContributionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

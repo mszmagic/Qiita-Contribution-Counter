@@ -12,7 +12,7 @@ import Kingfisher
 
 class userTableView: UITableViewController, articleRequestDelegate {
     
-    @IBOutlet var headerView: UIView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileDetailLabel: UILabel!
@@ -36,7 +36,7 @@ class userTableView: UITableViewController, articleRequestDelegate {
         tableView.tableHeaderView = headerView
         helper.delegate = self
         helper.userID = userToken
-        helper.getUserDetails { (profileImagePath, userName, description, error) in
+        getUserDetails(userID: userToken, completionHandler: { (profileImagePath, userName, description, error) in
             if error == nil {
                 DispatchQueue.main.async {
                     self.profileNameLabel.text = userName
@@ -54,7 +54,7 @@ class userTableView: UITableViewController, articleRequestDelegate {
                 self.navigationController?.popViewController(animated: true)
                 (error ?? "Unknown error").showSimpleAlert(on: self.navigationController)
             }
-        }
+        })
         helper.getArticles()
     }
     

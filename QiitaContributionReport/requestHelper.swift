@@ -27,56 +27,15 @@ class requestHelper {
     
     weak var delegate: articleRequestDelegate?
     
-    /*
-     Get the basic user information
-     - completionHandler(profileImageURLPath, UserName, Description, error)
-     */
-    func getUserDetails(completionHandler: @escaping (String?, String?, String?, String?) -> Void) {
-        let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-
-        guard let URL = URL(string: "https://qiita.com/api/v2/authenticated_user") else {
-            completionHandler(nil, nil, nil, "URL Convertion failed")
-            return
-        }
-        var request = URLRequest(url: URL)
-        request.httpMethod = "GET"
-
-        // Headers
-
-        request.addValue("Bearer \(userID ?? "")", forHTTPHeaderField: "Authorization")
-
-        //Define the web session task
-        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            if (error == nil) {
-                if let fetchedData = data {
-                    if let parsedData = try? JSON(data: fetchedData).dictionary {
-                        //Get the name
-                        let name = parsedData["name"]?.stringValue
-                        //Get the description
-                        let description = parsedData["description"]?.stringValue
-                        //Get the profile image
-                        let profileImage = parsedData["profile_image_url"]?.stringValue
-                        //Provide the result
-                        completionHandler(profileImage, name, description, nil)
-                    }
-                }
-            }
-            else {
-                // Failure
-                print("URL Session Task Failed: %@", error!.localizedDescription);
-                completionHandler(nil, nil, nil, error?.localizedDescription)
-            }
-        })
-        task.resume()
-        session.finishTasksAndInvalidate()
-    }
-    
     func getArticles() {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         
-        guard let URL = URL(string: "https://qiita.com/api/v2/authenticated_user/items") else {return}
+        guard let URL = URL(string: "https://qiita.com/api/v2/authenticated_user/items") else {
+            delegate?.onTaskFailed(reason: "URL convertion failed!")
+            return
+        }
+        
         var request = URLRequest(url: URL)
         request.httpMethod = "GET"
 
@@ -102,6 +61,7 @@ class requestHelper {
             // Failure
             self.delegate?.onTaskFailed(reason: error?.localizedDescription ?? "Unknown error. Please check your token and try again.")
         })
+        
         task.resume()
         session.finishTasksAndInvalidate()
     }
@@ -110,7 +70,11 @@ class requestHelper {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
 
-        guard let URL = URL(string: "https://qiita.com/api/v2/items/\(id)") else {return}
+        guard let URL = URL(string: "https://qiita.com/api/v2/items/\(id)") else {
+            delegate?.onTaskFailed(reason: "URL convertion failed!")
+            return
+        }
+        
         var request = URLRequest(url: URL)
         request.httpMethod = "GET"
 
@@ -145,6 +109,47 @@ class requestHelper {
     
 }
 
+/*
+ Get the basic user information
+ - completionHandler(profileImageURLPath, UserName, Description, error)
+ */
+func getUserDetails(userID: String, completionHandler: @escaping (String?, String?, String?, String?) -> Void) {
+    let sessionConfig = URLSessionConfiguration.default
+    let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
 
+    guard let URL = URL(string: "https://qiita.com/api/v2/authenticated_user") else {
+        completionHandler(nil, nil, nil, "URL Convertion failed")
+        return
+    }
+    
+    var request = URLRequest(url: URL)
+    request.httpMethod = "GET"
 
+    // Headers
+    request.addValue("Bearer \(userID)", forHTTPHeaderField: "Authorization")
 
+    //Define the web session task
+    let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+        if (error == nil) {
+            if let fetchedData = data {
+                if let parsedData = try? JSON(data: fetchedData).dictionary {
+                    //Get the name
+                    let name = parsedData["name"]?.stringValue
+                    //Get the description
+                    let description = parsedData["description"]?.stringValue
+                    //Get the profile image
+                    let profileImage = parsedData["profile_image_url"]?.stringValue
+                    //Provide the result
+                    completionHandler(profileImage, name, description, nil)
+                }
+            }
+        }
+        else {
+            // Failure
+            print("URL Session Task Failed: %@", error!.localizedDescription);
+            completionHandler(nil, nil, nil, error?.localizedDescription)
+        }
+    })
+    task.resume()
+    session.finishTasksAndInvalidate()
+}
